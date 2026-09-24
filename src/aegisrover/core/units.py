@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import math
-_FACTORS = {('m', 'm'): 1.0, ('cm', 'm'): 0.01, ('mm', 'm'): 0.001, ('km', 'm'): 1000.0, ('s', 's'): 1.0, ('ms', 's'): 0.001, ('min', 's'): 60.0, ('deg', 'rad'): math.pi / 180.0, ('rad', 'rad'): 1.0, ('m/s', 'km/h'): 1000.0 / 3600.0, ('m/s', 'm/s'): 1.0, ('percent', 'ratio'): 0.01, ('ratio', 'ratio'): 1.0}
+_FACTORS = {('m', 'm'): 1.0, ('cm', 'm'): 0.01, ('mm', 'm'): 0.001, ('km', 'm'): 1000.0, ('s', 's'): 1.0, ('ms', 's'): 0.001, ('min', 's'): 60.0, ('deg', 'rad'): math.pi / 180.0, ('rad', 'rad'): 1.0, ('m/s', 'km/h'): 3600.0 / 1000.0, ('m/s', 'm/s'): 1.0, ('percent', 'ratio'): 0.01, ('ratio', 'ratio'): 1.0}
 
 def convert(value: float, src: str, dst: str) -> float:
     if src == dst:

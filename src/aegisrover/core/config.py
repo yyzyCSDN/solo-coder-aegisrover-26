@@ -6,7 +6,7 @@ def normalize(config):
     for key, (unit, lo, hi) in SCHEMA.items():
         raw = config[key]
         if isinstance(raw, dict):
-            value = convert(float(raw['value']), unit, raw['unit'])
+            value = convert(float(raw['value']), raw['unit'], unit)
         else:
             value = float(raw)
         if not lo <= value <= hi:
